@@ -13,10 +13,15 @@ server.use("/api/", postsRouter, upperCaseName(), usersRouter);
 
 function upperCaseName() {
   return function(req, res, next) {
-    const { name } = req.body;
-    if (name.charAt(0) !== name.charAt(0).toUpperCase()) {
-      res.json("Make sure your name is a Proper Noun");
-    }
+    // console.log(req.body.name.length);
+    // console.log(req.body.name);
+
+    // if (req.body.name !== undefined || req.body.name.length !== 0) {
+    //   const name = req.body.name;
+    //   if (name.charAt(0) !== name.charAt(0).toUpperCase()) {
+    //     res.json("Make sure your name is a Proper Noun");
+    //   }
+    // }
     next();
   };
 }
