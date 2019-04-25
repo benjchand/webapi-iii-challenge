@@ -6,7 +6,9 @@ const server = express();
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  res.send(" <h2> Welcome to the Lambda API </h2>");
+  res.send(
+    " <h2> Welcome to the Lambda API </h2> <h4> Use /api/users/, /api/users/id/, /api/users/posts/id/, and /api/posts/ to access API"
+  );
 });
 
 server.use("/api/", postsRouter, upperCaseName(), usersRouter);
